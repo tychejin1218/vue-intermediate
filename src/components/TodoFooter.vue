@@ -1,6 +1,6 @@
 <template>
   <div>
-	  input
+	  Footer
   </div>
 </template>
 
