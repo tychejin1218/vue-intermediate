@@ -27,7 +27,8 @@
     ],
     "rules": {
       "no-unused-vars" : "off",
-      "no-mixed-spaces-and-tabs" : 0
+      "no-mixed-spaces-and-tabs" : 0,
+      "no-console": "off"
     },
     "parserOptions": {
       "parser": "babel-eslint"
