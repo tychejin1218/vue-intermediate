@@ -4,11 +4,8 @@
     <!-- v-on:하위 컴포넌트에서 발생시킨 이벤트 이름="현재 컴포넌트의 메서드명" -->
     <TodoInput v-on:addTodoItem="addOneItem"></TodoInput>
     <!-- v-bind:내려보낼 프롭스 속성 이름="현재 위치의 컴포넌트 데이터 속성" -->
-    <TodoList v-bind:propsdata="todoItems" 
-              v-on:removeItem="removeOneItem"
-              v-on:toggleItem="toggleOneItem">
-    </TodoList>
-    <TodoFooter></TodoFooter>
+    <TodoList v-bind:propsdata="todoItems" v-on:removeItem="removeOneItem" v-on:toggleItem="toggleOneItem"></TodoList>
+    <TodoFooter v-on:clearAllItem="clearAllItem"></TodoFooter>
   </div>
 </template>
 
@@ -39,6 +36,10 @@ export default {
       this.todoItems[index].completed = !this.todoItems[index].completed; 
       localStorage.removeItem(todoItem.item);
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
+    },
+    clearAllItem: function() {
+      localStorage.clear();
+      this.todoItems = [];
     }
   },
   created: function() {
