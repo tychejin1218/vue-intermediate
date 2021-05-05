@@ -50,4 +50,16 @@ var dictionary1 = {
     console.log('found sth');
   }
 }
+
+2) 객체의 속성명과 값 명이 동일할 때 아래와 같이 축약 가능
+var figures = 10;
+- ES5
+var dictionary = {
+  figures: figures
+}
+
+- ES6
+var dictionary1 = {
+  figures
+}
 */
