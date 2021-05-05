@@ -33,3 +33,21 @@ var sum = () => {
   return 10 + 20;
 };
 */
+
+/*
+Enhanced Object Literals - 향상된 객체 리터럴
+1) 객체의 속성을 메서드로 사용할 때 function 예약어를 생략하고 생성 가능
+- ES5
+var dictionary = {
+  lookup: function() {
+    console.log('found sth');
+  }
+}
+
+- ES6
+var dictionary1 = {
+  lookup() {
+    console.log('found sth');
+  }
+}
+*/
