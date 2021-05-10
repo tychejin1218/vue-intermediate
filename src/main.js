@@ -63,3 +63,32 @@ var dictionary1 = {
   figures
 }
 */
+
+
+/*
+Vuex란?
+  - 무수히 많은 컴포넌트의 데 이터를 관리하기 위한 상태 관리 패턴이자 라이브러리
+  - React의 Flux 패턴에서 기인함
+  - Vue.js 중고급 개발자로 성장하기 위한 필수 관문
+
+Flux란?
+  - MVC 패턴의 복잡한 데이터 흐름 문제를 해결하는 개발 패턴 (Unidirectional data flow)
+    Action -> Dispatcher -> Model -> View
+    1. action : 화면에서 발생하는 이벤트 또는 사용자의 입력 
+    2. dispatcher : 데이터를 변경하는 방법, 메서드
+    3. model : 화면에 표시할 데이터
+    4. view : 사용자에게 비취지는 화면
+
+MVC 패턴과 Flux 패턴 비교
+  1. MVC 패턴
+    Controller -> Model <-> view
+  2. Flux 패턴
+    Action -> Dispatcher -> Model -> View
+
+MVC 패턴의 문제점
+  - 기능 추가 및 변경에 따라 생기는 문제점을 예측할 수 없음. (예) 페이스북 채팅 화
+  - 앱이 복잡해지면서 생기는 업데이트 루프
+
+Flux 패턴의 단방향 데이터 흐름
+  - 데이터의 흐름이 여러 갈래로 나뉘지 않고 단방향으로만 처리
+*/
