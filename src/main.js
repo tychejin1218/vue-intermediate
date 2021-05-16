@@ -155,4 +155,6 @@ getters란?
 
   <p>{{ this.$store.getters.getNumber }}</p>
   <p>{{ this.$store.getters.doubleNumber }}</p>
+
+  테스트
 */
