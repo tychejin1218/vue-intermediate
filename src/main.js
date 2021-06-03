@@ -204,5 +204,70 @@ state는 왜 직접 변경하지 않고 mutations로 변경할까?
   }
   - 특정 시점에 어떤 컴포넌트가 state를 접근하여 변경한 건지 확인하기 어렵기 때문
   - 따라서, 뷰의 반응성을 거스르지 않게 명시적으로 상태 변화를 수행, 반응성, 디버깅, 테스팅 혜택
+*/
 
+/*
+// store.js
+action란?
+  - 비동기 처리 로직을 선언하는 메서드, 비동기 로직을 담당하는 mutations
+  - 데이터 요청, Promise, ES6 async과 같은 비동기 처리는 모두 actions에 선언
+
+  state: {
+    num: 10
+  },
+  mutations: {
+    dobleNumber(state) {
+      state.num * 2;
+    }
+  },
+  actions: {
+    delayDoubleNumber(context) { // context로 store의 메서드와 속성 접근
+      context.commit('doubleNumber');      
+    }
+  }
+  // App.vue
+  this.$store.dispatch('delayDoubleNumber');
+*/
+
+/*
+actions 비동기 코드 예제1
+// store.js
+mutations: {
+  addCounter(state) {
+    state.counter++
+  }
+},
+actions: {
+  delayedAddCounter(context) {
+    setTimeout(() => context.commit('addCounter'), 2000);
+  }
+}
+
+// App.vue
+methods: {
+  incrementCounter() {
+    this.$store.dispatch('delayedAddCounter');
+  }
+}
+
+actions 비동기 코드 예제2
+// store.js
+mutations: {
+  setData(state, fetchedData) {
+    state.product = fetchedData;
+  }
+},
+actions: {
+  fetchProductData(context) {
+    return axios.get('https://domain.com/products/1')
+                .then(response => context.commit('setData', response));
+  }
+}
+
+// App.vue
+methods: {
+  getProduct() {
+    this.$store.dispatch('fetchProductData');
+  }
+}
 */
